@@ -3,6 +3,8 @@ using System.Collections;
 
 public class Player : MonoBehaviour
 {
+    Player player;
+
     // 移動スピード
     public float speed = 5;
 
@@ -40,4 +42,14 @@ public class Player : MonoBehaviour
         // 制限をかけた値をプレイヤーの位置とする
         transform.position = pos;
     }
+
+
+// ぶつかった瞬間に呼び出される
+void OnTriggerEnter2D (Collider2D c)
+{
+ 
+
+    // プレイヤーを削除
+    Destroy(gameObject);
+}
 }
